@@ -4,10 +4,6 @@ backend/__pycache__/
 backend/src/__pycache__/
 backend/src/*.pyc
 
-# React
-frontend/node_modules/
-frontend/build/
-
 # Environment Variables
 backend/.env
 
@@ -107,3 +103,4 @@ node_modules/
 # Frontend build outputs (if applicable)
 frontend/build/
 frontend/dist/
+frontend/node_modules/
