@@ -1,0 +1,109 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/src/__pycache__/
+backend/src/*.pyc
+
+# React
+frontend/node_modules/
+frontend/build/
+
+# Environment Variables
+backend/.env
+
+# Logs
+backend/src/utils/app.log
+
+# Other
+*.DS_Store
+node_modules
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# Migrations
+migrations/
+
+# SQL Database
+*.db
+*.sqlite3
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pyre type checker
+.pyre/
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Node.js dependencies (if applicable)
+node_modules/
+
+# Frontend build outputs (if applicable)
+frontend/build/
+frontend/dist/
