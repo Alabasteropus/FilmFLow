@@ -1,0 +1,86 @@
+// src/App.js
+import React, { useState } from 'react';
+import axios from 'axios';
+import './App.css';
+
+function App() {
+  // State variables for text generation
+  const [textPrompt, setTextPrompt] = useState('');
+  const [generatedText, setGeneratedText] = useState('');
+  
+  // State variables for image generation
+  const [imagePrompt, setImagePrompt] = useState('');
+  const [generatedImageUrl, setGeneratedImageUrl] = useState('');
+
+  // Handle text generation
+  const handleGenerateText = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/generate-text', {
+        prompt: textPrompt,
+      });
+      setGeneratedText(response.data.generated_text);
+    } catch (error) {
+      console.error('Error generating text:', error);
+      alert('There was an issue generating the text. Please try again.');
+    }
+  };
+
+  // Handle image generation (assuming you have a backend route for it)
+  const handleGenerateImage = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/generate-image', {
+        prompt: imagePrompt,
+      });
+      setGeneratedImageUrl(response.data.image_url);
+    } catch (error) {
+      console.error('Error generating image:', error);
+      alert('There was an issue generating the image. Please try again.');
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>FilmFlow</h1>
+
+      {/* Text Generation Section */}
+      <div>
+        <h2>Generate Text</h2>
+        <textarea
+          placeholder="Enter your prompt here..."
+          value={textPrompt}
+          onChange={(e) => setTextPrompt(e.target.value)}
+          rows={4}
+          cols={50}
+        />
+        <br />
+        <button onClick={handleGenerateText}>Generate Text</button>
+        {generatedText && (
+          <div>
+            <h3>Generated Text:</h3>
+            <p>{generatedText}</p>
+          </div>
+        )}
+      </div>
+
+      {/* Image Generation Section */}
+      <div>
+        <h2>Generate Image</h2>
+        <input
+          type="text"
+          placeholder="Enter image prompt..."
+          value={imagePrompt}
+          onChange={(e) => setImagePrompt(e.target.value)}
+        />
+        <button onClick={handleGenerateImage}>Generate Image</button>
+        {generatedImageUrl && (
+          <div>
+            <h3>Generated Image:</h3>
+            <img src={generatedImageUrl} alt="Generated" />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default App;
